@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6kqicy5pnroo"]
+
+[ext_resource type="Texture2D" uid="uid://b6xkmke52vid6" path="res://oak_woods_v1.0/decorations/shop_anim.png" id="1_ijeyf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6qpx"]
+radius = 47.3814
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbl2t"]
+atlas = ExtResource("1_ijeyf")
+region = Rect2(0, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qfeb"]
+atlas = ExtResource("1_ijeyf")
+region = Rect2(118, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aefdv"]
+atlas = ExtResource("1_ijeyf")
+region = Rect2(236, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6heya"]
+atlas = ExtResource("1_ijeyf")
+region = Rect2(354, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oolta"]
+atlas = ExtResource("1_ijeyf")
+region = Rect2(472, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecjiu"]
+atlas = ExtResource("1_ijeyf")
+region = Rect2(590, 0, 118, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osni7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbl2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qfeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aefdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6heya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oolta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecjiu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Shop" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 16)
+shape = SubResource("CircleShape2D_j6qpx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_osni7")
+autoplay = "default"
